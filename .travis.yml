@@ -1,0 +1,14 @@
+language: bash
+
+services:
+  - docker
+
+script:
+  - docker build . -t httpd
+  - docket tag httpd corefantasy/httpd
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
