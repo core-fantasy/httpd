@@ -5,7 +5,7 @@ services:
 
 script:
   - docker build . -t httpd
-  - docket tag httpd corefantasy/httpd
+  - docker tag httpd corefantasy/httpd
 
 deploy:
   provider: script
