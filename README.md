@@ -12,6 +12,10 @@ The `DOCKER_USERNAME` and `DOCKER_PASSWORD` environment variables are required. 
 are the username and password for the Docker Hub account. These can be set on the Travis
 website, or via the `travis` CLI tool.
 
+When this build completes it triggers a build of the [UI repo][3] as it directly depends on
+this repo. In order to make this work, another Travis environment variable, 
+`TRAVIS_ACCESS_TOKEN` must be set. This should be value when running 
+`travis login && travis token`. For more details, reference [this][4].
 
 ## Debugging
 ```bash
@@ -24,3 +28,5 @@ $ docker run -dit --name httpd-test -p 8080:80 httpd
 
 [1]:https://hub.docker.com/_/httpd/
 [2]:https://travis-ci.org
+[3]:https://github.com/core-fantasy/ui
+[4]:https://github.com/plume-lib/trigger-travis/
