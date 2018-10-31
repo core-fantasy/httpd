@@ -12,6 +12,13 @@ The `DOCKER_USERNAME` and `DOCKER_PASSWORD` environment variables are required. 
 are the username and password for the Docker Hub account. These can be set on the Travis
 website, or via the `travis` CLI tool.
 
+
+## Debugging
+```bash
+$ docker build . -t httpd
+$ docker run -dit --name httpd-test -p 8080:80 httpd
+```
+
 ## Reference
 * https://docs.travis-ci.com/user/docker/
 
